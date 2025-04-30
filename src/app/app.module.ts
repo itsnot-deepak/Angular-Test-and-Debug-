@@ -21,7 +21,7 @@ import { UserListInterceptorService } from './mocks/user-list-interceptor.servic
         HttpClientModule
     ],
     providers: [
-    // { provide: ErrorHandler, useClass: ErrorMetadataService },
+    // { provide: ErrorHandler, useClass: ErrorMetadataService }, // we have to add this to use the error handling class , this tells the angular to use the errorMetadata service to handle the errors 
         { provide: HTTP_INTERCEPTORS, useClass: UserListInterceptorService, multi: true }
     ],
     bootstrap: [AppComponent]

@@ -11,7 +11,7 @@ export class WebStorageService {
     private http: HttpClient
     ) { }
 
-    public get(key: string): string | null {
+    public get(key: string): string | null { //this will either return an string or it will return null and this service gets an string as the key 
         return window.localStorage.getItem(key);
     }
 

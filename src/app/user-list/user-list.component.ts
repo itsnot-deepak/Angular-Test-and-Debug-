@@ -3,7 +3,7 @@ import { User } from '../user/user';
 import { UserListService } from './user-list.service';
 
 import { WebStorageService } from '../services/web-storage.service';
-
+// i do not understand what is happening in this project , the person is using an mock api server which intercepts every request the doumentation is mostly related to the videos 
 @Component({
     selector: 'app-user-list',
     templateUrl: './user-list.component.html',
