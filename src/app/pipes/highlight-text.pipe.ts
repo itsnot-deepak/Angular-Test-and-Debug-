@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'highlightText' // should be named camel case  
+    name: 'highlightText' // should be named camel case pipes are named using the camel case 
 })
 export class HighlightTextPipe implements PipeTransform {
 

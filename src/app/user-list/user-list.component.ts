@@ -19,7 +19,10 @@ export class UserListComponent implements OnInit {
   ) { }
 
   public async ngOnInit(): Promise<void> {
-      this.webStorageService.getRemote().subscribe(filtered => {
+    // basically for now assume that this getremote function is returning the data that is present in the local storage , so
+    // here we are doing nothing but checking if something is present in the local storage and if yes then we return the 
+      this.webStorageService.getRemote().subscribe(filtered => {  // whatever is returned by the service is stored in the filter and then
+        // here we are checking that if filtered is null , i.e if nothing is returned then we return all the user , otherwise we return the filtered list after applying the filter 
           this.users = (filtered === null) ? this.userListService.getAll() : this.userListService.filter(filtered);
       }, error => {
           console.error('ngOnInit Error', error);

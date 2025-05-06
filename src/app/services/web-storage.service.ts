@@ -15,10 +15,11 @@ export class WebStorageService {
         return window.localStorage.getItem(key);
     }
 
-    public set(key: string, value: string): void {
+    public set(key: string, value: string): void { // here we are accessing the local storage and then we have two methods , get and set , the local storage is an persistant storage , which means that it will stay even if we close the browser or reload it 
+        // that storage can be 5-10 mbs and it is generally in the form of key value pairs 
         window.localStorage.setItem(key, value);
     }
-
+// these are normal methods which are for the normal backend
     public getRemote(): Observable<string> {
         return this.http.get<string>('/mock/api/filter');
     }

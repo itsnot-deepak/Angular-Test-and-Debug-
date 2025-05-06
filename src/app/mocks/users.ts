@@ -1,6 +1,7 @@
 import { User } from '../user/user';
 
-export const USERS: User[] = [
+export const USERS: User[] = // this is the user that is the class that we have defined and has the properties name and locationID in them  
+[
     { name: 'Johnny Allen', locationId: 0 },
     { name: 'Jacqueline Brewer', locationId: 8 },
     { name: 'Maria Greene', locationId: 1 },

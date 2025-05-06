@@ -1,4 +1,19 @@
 # Angular: Testing and Debugging
+
+To run the project use this command 
+NODE_OPTIONS=--openssl-legacy-provider npx ng serve
+
+
+
+
+
+
+
+
+
+
+
+
 This is the repository for the LinkedIn Learning course Angular: Testing and Debugging. The full course is available from [LinkedIn Learning][lil-course-url].
 
 ![Angular: Testing and Debugging][lil-thumbnail-url] 

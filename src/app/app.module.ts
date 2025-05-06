@@ -8,12 +8,14 @@ import { ErrorMetadataService } from './services/error-metadata.service';
 import { HighlightTextPipe } from './pipes/highlight-text.pipe';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { UserListInterceptorService } from './mocks/user-list-interceptor.service';
+import { LocationIdPipe } from './pipes/location-id.pipe';
 
 @NgModule({
     declarations: [
         AppComponent,
         UserListComponent,
-        HighlightTextPipe
+        HighlightTextPipe,
+        LocationIdPipe
     ],
     imports: [
         BrowserModule,
