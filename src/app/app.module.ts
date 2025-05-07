@@ -24,7 +24,7 @@ import { LocationIdPipe } from './pipes/location-id.pipe';
     ],
     providers: [
     // { provide: ErrorHandler, useClass: ErrorMetadataService }, // we have to add this to use the error handling class , this tells the angular to use the errorMetadata service to handle the errors 
-        { provide: HTTP_INTERCEPTORS, useClass: UserListInterceptorService, multi: true }
+        { provide: HTTP_INTERCEPTORS, useClass: UserListInterceptorService, multi: true } // this is the interceptor getting registered and the order matter here 
     ],
     bootstrap: [AppComponent]
 })

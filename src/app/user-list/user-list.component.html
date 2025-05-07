@@ -11,6 +11,6 @@
 
 <ul class="user-list">
   <!--According to the filter the value of the local storage that stores the list of user gets updated as we have the users that are needed in the list according to the filter -->
-  <li *ngFor="let user of (users | async)" class="user-list-item" [innerHtml]="user.name | highlightText : filter.value"></li>
+  <li *ngFor="let user of (users | async |locationId:4:5:7)" class="user-list-item" [innerHtml]="user.name | highlightText : filter.value"></li>
   <!-- here we are calling the custom pipe which we made and then we send the user.name as the value and the filter.values as the-->
 </ul>

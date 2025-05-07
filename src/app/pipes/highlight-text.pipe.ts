@@ -4,8 +4,8 @@ import { Pipe, PipeTransform } from '@angular/core';
     name: 'highlightText' // should be named camel case pipes are named using the camel case 
 })
 export class HighlightTextPipe implements PipeTransform {
-
-    transform(value: string, filter: string): string {
+// the transform take atleast one argument that is the value and it then takes an list of optional arguments 
+    transform(value: string, filter: string): string { // the value here is the value that will be the ngmodel in which this will be used and the filter would be the extra information
         if (filter.length === 0) {
             return value;
         }
