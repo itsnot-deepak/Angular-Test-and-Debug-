@@ -1,6 +1,6 @@
 import { UserListService } from './user-list.service';
 
-describe('User List Service', () => {
+describe('User List Service', () => { // describe is the global function and the it takes in 
     let service: UserListService;
 
     beforeEach(() => {

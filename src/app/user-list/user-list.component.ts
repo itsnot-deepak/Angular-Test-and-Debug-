@@ -23,14 +23,15 @@ export class UserListComponent implements OnInit {
     // here we are doing nothing but checking if something is present in the local storage and if yes then we return the 
       this.webStorageService.getRemote().subscribe(filtered => {  // whatever is returned by the service is stored in the filter and then
         // here we are checking that if filtered is null , i.e if nothing is returned then we return all the user , otherwise we return the filtered list after applying the filter 
-          this.users = (filtered === null) ? this.userListService.getAll() : this.userListService.filter(filtered);
+          this.users = (filtered === null) ? this.userListService.getAll() : this.userListService.filter(filtered); 
+          // checks if there is an search filter that is stored in the local storage and if not then it show the original list 
       }, error => {
           console.error('ngOnInit Error', error);
       });
   }
 
   public async update(text: string): Promise<void> {
-      this.webStorageService.setRemote(text).subscribe(filtered => {
+      this.webStorageService.setRemote(text).subscribe(filtered => { // when the user enters something in the search this is triggered and if the search is null then it shows the original list of users other wise it shows the 
           this.users = (filtered === null) ? this.userListService.getAll() : this.userListService.filter(filtered);
       });
   }

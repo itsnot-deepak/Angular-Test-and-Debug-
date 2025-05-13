@@ -22,10 +22,13 @@ export class UserListInterceptorService implements HttpInterceptor {
   // we are having the httprequest , it takes in all the http requests and the response body of the http request can be of type any 
   // the next is an httphandler it is used to pass the request to the next interceptor and at the last interceptor the request is handled to the backend 
   // when the reponse is given from the backend the order is followed in reverse 
-  // the response is not handled here and it is passed at it is , we do not need to put any argument for  
+  // the response is not handled here and it is passed at it is , we do not need to put any argument for the response 
+  // the response can be handled using the rxjs 
+  // we use the tap map or catch error to do something when the response is sent back 
+  // the return type is observable/promise of httpevent , http event means any response, error response , or any set event 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<string>> {
 
-      if (request.url === this.API_URL && request.method === 'GET') {
+      if (request.url === this.API_URL && request.method === 'GET') { // check if the request is from the particular url and the method is get 
           return this.getFilter();
       }
 
@@ -33,20 +36,21 @@ export class UserListInterceptorService implements HttpInterceptor {
           return this.setFilter(request.body);
       }
 
-      return next.handle(request);
+      return next.handle(request); // send the modified request to the next interceptor in the list 
   }
 
   private getFilter(): Observable<HttpResponse<string>> {
       return new Observable(observer => {
-          observer.next(new HttpResponse<string>({
+          observer.next(new HttpResponse<string>({ // creating an new obeservable response and is returned to only those who subscribe 
               status: 200,
-              body: window.localStorage.getItem(this.STORAGE_KEY)
+              body: window.localStorage.getItem(this.STORAGE_KEY) // gets the stored search filter from the local storage and sends it to the user list component 
           }));
 
-          observer.complete();
+          observer.complete(); // marks the end of the observable 
       });
   }
 
+  // stores the search box input in the local storage 
   private setFilter(filter: string): Observable<HttpResponse<string>> {
       window.localStorage.setItem(this.STORAGE_KEY, filter);
       return this.getFilter();

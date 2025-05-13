@@ -2,7 +2,19 @@
   <!--here the filter is the reference template variable and it is used to access the information that is present in the template and here we are using the keyup
   the keyup is used to call the update function everytime the there is an key added to the search column and then it calls the update with the values present in the filter using the filter.value -->
   <input type="text" class="form-control" placeholder="Find Users by Name" #filter (keyup)="update(filter.value)">
+<!--
+  So what is even happening , let me give u an overview of the code and what is actually happening in the code 
+  so there is this list of users that we have in an file , now we have a search bar and that is dynamic meaning as we type it shows us the list based on the matched string
+  so when i write anything that is stored as a filt in the local storage and then even if i reload and cloes the browser it stays and the filtered list is only shown 
+  until i write something else in the search 
 
+so this search input goes into the update and then it is sent to the get remote where it is stored to the local storage and then 
+when we display we chek for the filter and if theres is an filter then we show the filtered list otherwise the original list 
+
+
+
+
+-->
   <span class="input-group-btn">
     <!--this is used to clear the update and then show the entire list of the user and this calls the update with an empty string and thn it sets the search input to an empty string -->
     <button class="btn btn-default" type="button" (click)="update(''); filter.value = ''">Clear</button>
