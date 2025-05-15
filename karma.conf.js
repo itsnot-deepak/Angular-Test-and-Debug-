@@ -1,6 +1,12 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
+
+
+
+
+// this is the configration file for karma , karma is used to run the test in the browser but the framework like jasmine are actually used to write the test cases 
+
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -37,7 +43,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadless'],
     singleRun: false,
     restartOnFileChange: true
   });

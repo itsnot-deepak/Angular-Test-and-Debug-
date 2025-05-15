@@ -17,5 +17,5 @@ export const USERS: User[] = // this is the user that is the class that we have 
     { name: 'Nate Levesque', locationId: 6 },
     { name: 'Camden Chan', locationId: 14 },
     { name: 'Elliot Gauthier', locationId: 7 },
-    { name: 'Gavin Paquette', locationId: 15 },
+    //{ name: 'Gavin Paquette', locationId: 15 },
 ];
